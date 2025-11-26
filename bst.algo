@@ -1,0 +1,27 @@
+Algorithm: Binary Search Tree (BST)
+
+Step 1: Start
+
+Step 2: Create a node structure with data, left, and right pointers
+
+Step 3: To insert a value:
+        - If tree is empty, create root node
+        - Else, find correct position and insert left or right
+
+Step 4: To search a value:
+        - Start from root and move left or right based on value
+
+Step 5: To delete a value:
+        - Find the node
+        - If node has no child, remove it
+        - If node has one child, replace with child
+        - If node has two children, replace with smallest in right subtree
+
+Step 6: For traversals:
+        - Inorder: left, root, right
+        - Preorder: root, left, right
+        - Postorder: left, right, root
+
+Step 7: Repeat operations as per user choice
+
+Step 8: Stop

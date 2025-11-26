@@ -1,0 +1,29 @@
+Algorithm: Doubly Linked List
+
+Step 1: Start
+
+Step 2: Create a node structure with data, prev, and next pointers
+
+Step 3: To insert at beginning:
+        - Create new node
+        - Set new node's next to head
+        - Set new node's prev to NULL
+        - If head is not NULL, set head's prev to new node
+        - Update head to new node
+
+Step 4: To insert at end:
+        - Create new node
+        - Set new node's next to NULL
+        - If list is empty, set new node's prev to NULL and head to new node
+        - Else, traverse to last node, set last node's next to new node, and new node's prev to last node
+
+Step 5: To delete a node:
+        - Search for node with given value
+        - If found, update previous node's next and next node's prev
+        - If node is head, update head to next node
+        - Free the node
+
+Step 6: To display list:
+        - Traverse from head and print each node's data
+
+Step 7: Repeat operations as per user choice

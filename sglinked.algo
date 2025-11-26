@@ -1,0 +1,26 @@
+Algorithm: Singly Linked List
+
+Step 1: Start
+
+Step 2: Create a node structure with data and next pointer
+
+Step 3: To insert at beginning:
+        - Create new node
+        - Set new node's next to head
+        - Update head to new node
+
+Step 4: To insert at end:
+        - Create new node
+        - If list is empty, set head to new node
+        - Else, traverse to last node and set its next to new node
+
+Step 5: To delete a node:
+        - Search for node with given value
+        - If found, remove node and update links
+
+Step 6: To display list:
+        - Traverse from head and print each node's data
+
+Step 7: Repeat operations as per user choice
+
+Step 8: Stop

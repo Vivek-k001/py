@@ -1,0 +1,25 @@
+Algorithm: Circular Queue
+
+Step 1: Start
+
+Step 2: Initialize queue array, front = -1, rear = -1
+
+Step 3: To enqueue (insert) an element:
+        - If queue is full, display "Queue is Full"
+        - If queue is empty, set front = rear = 0
+        - Else if rear is at last position, set rear = 0
+        - Else, increment rear
+        - Insert value at queue[rear]
+
+Step 4: To dequeue (delete) an element:
+        - If queue is empty, display "Queue is Empty"
+        - Print deleted element
+        - If front == rear, set front = rear = -1
+        - Else if front is at last position, set front = 0
+        - Else, increment front
+
+Step 5: To display queue elements:
+        - If queue is empty, display "Queue is Empty"
+        - Else, print elements from front to rear (handle wrap around)
+
+Step 6: Repeat operations as per user choice
