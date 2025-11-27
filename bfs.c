@@ -5,7 +5,6 @@ int main() {
     int visited[20] = {0};
     int queue[20];
     int front = 0, rear = 0;
-
     printf("Enter number of vertices: ");
     scanf("%d", &n);
 
