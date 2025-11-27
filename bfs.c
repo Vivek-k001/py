@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 int main() {
     int n, start;
     int adj[20][20];
@@ -16,16 +15,11 @@ int main() {
             scanf("%d", &adj[i][j]);
         }
     }
-
     printf("Enter starting vertex: ");
-    scanf("%d", &start);
-
-    // BFS
+    scanf("%d", &start); 
     visited[start] = 1;
     queue[rear++] = start;
-
     printf("BFS Traversal: ");
-
     while (front < rear) {
         int node = queue[front++];
         printf("%d ", node);
