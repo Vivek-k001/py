@@ -1,41 +1,16 @@
-Algorithm: Breadth-First Search (BFS) Using Adjacency List
+Algorithm: BFS Traversal
 
-Step 1: Start
-
-Step 2: Define a structure Node
-        - integer vertex
-        - pointer next (to next node)
-
-Step 3: Declare global arrays
-        - adj[MAX] → adjacency list
-        - visited[MAX] → to mark visited vertices
-        - queue[MAX] → for BFS queue
-        - front = 0, rear = 0
-
-Step 4: Define function enqueue(v)
-        - queue[rear] = v
-        - rear = rear + 1
-
-Step 5: Define function dequeue()
-        - return queue[front]
-        - front = front + 1
-
-Step 6: Define function addEdge(u, v)
-        - create a new node
-        - newNode.vertex = v
-        - newNode.next = adj[u]
-        - adj[u] = newNode
-
-Step 7: For undirected graph
-        - addEdge(u, v)
-        - addEdge(v, u)
-
-Step 8: In BFS(start), initialize visited array to 0 for all vertices
-
-Step 9: Enqueue start vertex
-        - enqueue(start)
-        - visited[start] = 1
-
-Step 10: Print "BFS Traversal:"
-
-Step 
+1. Start
+2. Read number of vertices n
+3. Read the adjacency matrix
+4. Read the starting vertex
+5. Mark the starting vertex as visited
+6. Insert the starting vertex into the queue
+7. While the queue is not empty:
+      a. Remove the front element (node)
+      b. Print node
+      c. For each vertex i:
+             If node is connected to i AND i is not visited:
+                    Mark i as visited
+                    Add i to the queue
+8. Stop

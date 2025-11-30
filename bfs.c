@@ -1,81 +1,35 @@
 #include <stdio.h>
-#include <stdlib.h>
-
-#define MAX 20
-
-typedef struct Node {
-    int vertex;
-    struct Node* next;
-} Node;
-
-Node* adj[MAX];     // Adjacency list
-int visited[MAX];   // Visited array
-int queue[MAX];
-int front = 0, rear = 0;
-
-void enqueue(int v) {
-    queue[rear++] = v;
-}
-
-int dequeue() {
-    return queue[front++];
-}
-
-void addEdge(int u, int v) {
-    Node* newNode = (Node*)malloc(sizeof(Node));
-    newNode->vertex = v;
-    newNode->next = adj[u];
-    adj[u] = newNode;
-}
-
-void bfs(int start) {
-    for (int i = 0; i < MAX; i++)
-        visited[i] = 0;
-
-    enqueue(start);
-    visited[start] = 1;
-
-    printf("\nBFS Traversal: ");
-
-    while (front < rear) {
-        int node = dequeue();
-        printf("%d ", node);
-
-        Node* temp = adj[node];
-        while (temp != NULL) {
-            if (!visited[temp->vertex]) {
-                enqueue(temp->vertex);
-                visited[temp->vertex] = 1;
-            }
-            temp = temp->next;
-        }
-    }
-    printf("\n");
-}
-
 int main() {
-    int n, edges, u, v, start;
-
+    int n, start;
+    int adj[20][20];
+    int visited[20] = {0};
+    int queue[20];
+    int front = 0, rear = 0;
     printf("Enter number of vertices: ");
     scanf("%d", &n);
 
-    for (int i = 0; i < n; i++)
-        adj[i] = NULL;
-
-    printf("Enter number of edges: ");
-    scanf("%d", &edges);
-
-    printf("Enter edges (u v):\n");
-    for (int i = 0; i < edges; i++) {
-        scanf("%d %d", &u, &v);
-        addEdge(u, v);
-        addEdge(v, u);   // For undirected graph
+    printf("Enter adjacency matrix:\n");
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            scanf("%d", &adj[i][j]);
+        }
     }
-
     printf("Enter starting vertex: ");
-    scanf("%d", &start);
+    scanf("%d", &start); 
+    visited[start] = 1;
+    queue[rear++] = start;
+    printf("BFS Traversal: ");
+    while (front < rear) {
+        int node = queue[front++];
+        printf("%d ", node);
 
-    bfs(start);
+        for (int i = 0; i < n; i++) {
+            if (adj[node][i] == 1 && visited[i] == 0) {
+                visited[i] = 1;
+                queue[rear++] = i;
+            }
+        }
+    }
 
     return 0;
 }
